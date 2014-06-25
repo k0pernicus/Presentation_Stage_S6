@@ -1,0 +1,553 @@
+\documentclass[t, 10pt]{beamer}
+
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{ulem}
+
+\usetheme{Warsaw}
+
+\title[Visualisation interactive des clones V(D)J]{Visualisation interactive des clones V(D)J en fonction des distances d'édition, et suivi de la Leucémie Aigüe Lymphoblastique}
+\author[Antonin Carette]{\textbf{Antonin Carette}\\Tuteur entreprise: \textbf{Mathieu Giraud}\\Tuteur Universitaire: \textbf{Samy Meftali}}
+\institute{LIFL - Équipe Bonsai\\Université Lille1}
+\date{27 Juin 2014}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+  \frametitle{Sommaire}
+  \tableofcontents[currentsection, hideothersubsections]
+  \end{frame} 
+}
+
+\begin{document}
+
+	\begin{frame}
+	\titlepage
+	\includegraphics[scale=0.08]{img/logo-lille1.jpg}
+	\hfill
+	\includegraphics[scale=0.04]{img/logo-lifl.png}
+	\hfill
+	\includegraphics[scale=0.2]{img/bonsai-rond.jpg}
+	\end{frame}
+	
+	\begin{frame}
+	\tableofcontents
+	\end{frame}
+	
+	\section{Introduction}
+	
+	\subsection{Le LIFL et l'équipe Bonsai}
+	\begin{frame}
+	Le \textbf{LIFL} (\textbf{Laboratoire d'Informatique Fondamentale de Lille}) est un laboratoire Français, présent sur le campus de l'Université Lille1, rattaché à l'Institut des Sciences de l'Information et de leurs Interactions (INS2I) du CNRS (Centre National de la Recherche Scientifique).
+	\\ Dirigé par \textbf{Sophie Tison}, il comprend actuellement 10 équipes-projets et équipes du centre de recherche INRIA Lille - Nord Europe.
+	\pause
+	\vfill
+	L'équipe \textbf{Bonsai} est une équipe de bio-informaticiens.
+	\\
+	Elle comprend actuellement 20 membres (chercheurs, enseignants chercheurs, thésards, ...), et est actuellement dirigée par \textbf{Hélène Touzet}.
+	\\
+	Travail avec \textbf{Mathieu Giraud}, \textbf{Mikaël Salson} et \textbf{Marc Duez} sur l'ADN.
+	\end{frame}
+	
+	\subsection{Contexte biologique}
+	\begin{frame}
+	\begin{block}{Généralités sur l'ADN}
+		\pause
+		\textbf{ADN}: molécule modélisée en double-hélice, support universel de l'information génétique.
+		\\
+		Constituée d'un alphabet de 4 lettres: \textbf{A},\textbf{T},\textbf{G},\textbf{C}.
+		\\
+		Peut être sujette à des \textbf{recombinaisons}, par différents phénomènes biologiques.
+	\end{block}
+	\pause
+	\begin{block}{Les Leucocytes: gardiens de notre corps}
+		\pause
+		\textbf{Leucocyte = globule blanc.}
+		\\
+		Les \textbf{lymphocytes} font partie d'une classe de leucocytes, présents dans le sang.
+		\\
+		Un lymphocyte reconnaît un agent étranger \textbf{spécifique} en fonction de son \textbf{site actif} (\textbf{recombinaison V(D)J}).
+		\\
+		Lors de la reconnaissance: activation -> multiplication.
+	\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\vfill
+		Chaque lymphocyte porte une portion d'ADN V(D)J permettant son identification.
+		\vfill
+		\begin{block}{Recombinaison V(D)J}
+		\begin{enumerate}
+			\item{Délétion de portions du gène V et J}
+			\item{Ajout de nucléotides aléatoires entre V/D et D/J}
+		\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{block}{La Leucémie Aigüe Lymphoblastique (LAL)}
+		\pause
+		Cancer liquide affectant majoritairement les enfants.
+		\\
+		Provoque une \textbf{surproduction de lymphocytes cancéreux}. Les lymphocytes strictement identiques, regroupés en population, sont appelés \textbf{clones V(D)J}.
+	\end{block}
+	\pause
+	\begin{alertblock}{Problème}
+		\pause
+		L'accumulation de lymphocytes cancéreux provoque:
+		\begin{itemize}
+			\item{une anémie chez le patient,}
+			\item{une diminution du nombre de plaquettes,}
+			\item{une diminution des globules blancs normaux.}
+		\end{itemize}
+		Peut amener à la mort, chez le malade.
+	\end{alertblock}
+	\end{frame}
+	
+	\subsection{Le projet Vidjil}
+	\begin{frame}
+		\textit{Vidjil}: collaboration entre l'équipe Bonsai et le Centre d'Hématologie de l'Université Lille2. Projet maintenu par \textbf{Claude Preudhomme}, \textbf{Mathieu Giraud} et \textbf{Mikaël Salson}. Ingénieur sur le projet: \textbf{Marc Duez}.
+		\pause
+		\vfill
+		\begin{block}{A quoi sert le projet ?}
+		\pause
+		\textit{Vidjil} est composé de deux programmes:
+		\pause
+		\begin{itemize}
+			\item{un programme en C++ (\textit{algorithme}),}
+			\pause
+			\item{une interface Web (\textit{interface}): HTML5, Javascript, Ajax, \textit{frameworks} D3JS et JQuery, Python (web2py)}
+		\end{itemize}
+		\pause
+		\textit{Vidjil} sert aux médecins et chercheurs afin de pouvoir détecter, textbf{dénombrer et suivre les clones V(D)J} en fonction du temps, mais permet aussi de \textbf{préciser les traitements thérapeutiques}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{center}
+	\includegraphics[scale=0.25]{img/m_W+B.jpg}
+	\\
+	\textit{Interface} avec palettes Dark/Light
+	\end{center}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{center}
+	\includegraphics[scale=0.25]{img/m_genes.jpg}
+	\\
+	Visualisation selon la distribution \textbf{V/J Genes}
+	\vfill
+	\includegraphics[scale=0.25]{img/m_alleles.jpg}
+	\\
+	Visualisation selon la distribution \textbf{V/J Alleles}
+	\end{center}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{alertblock}{Problème}
+		Sur une distribution déjà implanté, comment savoir, dans un groupe de clones, lesquels sont les plus similaires les uns des autres?
+	\end{alertblock}
+	\pause
+	\begin{block}{Solution 1}
+		La solution est de comparer les clones un par un, nucléotide par nucléotide... Ce qui est fastidieux, et pouvant être un source d'erreur!
+	\end{block}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{alertblock}{Problème}
+		Sur une distribution déjà implanté, comment savoir, dans un groupe de clones, lesquels sont les plus similaires les uns des autres?
+	\end{alertblock}
+	\begin{block}{Solution 1}
+		\sout{Comparer les clones un par un avec l'\textit{interface}, nucléotide par nucléotide... Ce qui est fastidieux, et peut être une source d'erreur!}
+	\end{block}
+	\begin{block}{Solution 2}
+		Créer un outil permettant de visualiser directement les clones en fonction de leurs similarités.
+	\end{block}
+	\end{frame}
+	
+	\section{Sujet et objectifs}
+	\begin{frame}
+	\begin{alertblock}{Problématique}
+		La problématique concernant mon sujet de stage est de visualiser de façon interactive les clones V(D)J selon leurs distances d'édition.
+	\end{alertblock}
+	\pause
+	\vfill
+	\begin{block}{Objectifs}
+		Deux objectifs:
+		\pause
+		\begin{itemize}
+		\item{création d'un graphe représentant les distances d'édition entre les clones,}
+		\pause
+		\item{implantation de l'algorithme de partitionnement DBSCAN.}
+		\end{itemize}
+	\end{block}
+	\pause
+	\vfill
+	\begin{block}{Mais avant...}
+	\pause
+	...il faut d'abord commencer à calculer les distances d'édition!
+	\end{block}
+	\end{frame}
+	
+	\section{A la recherche de la distance d'édition perdue...}
+	
+	\begin{frame}
+	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
+		\pause
+		\textbf{\textit{Une distance d'édition est un nombre de modifications à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
+		\\
+		3 opérations: insertion/délétion/substitution.
+		\\
+		Nous prendrons le poids suivant: \textbf{0} pour un \textit{match}, \textbf{1} pour insertion/délétion/substitution -> \textit{Levenshtein}.
+	\end{block}
+	\pause
+	\begin{exampleblock}{Exemple 1}
+		Prenons deux chaînes de caractères de même longueur: CHIEN / NICHE.
+		\\
+		\begin{tabular}{llllll}
+		    & C & H & I & E & N \\
+		N & - & - & - & - & - \\
+		I & - & - & - & - & - \\
+		C & - & - & - & - & - \\
+		H & - & - & - & - & - \\
+		E & - & - & - & - & - \\
+		\end{tabular}
+	\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
+		\pause
+		\textbf{\textit{Une distance d'édition est un nombre de modifications à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
+		\\
+		3 opérations: insertion/délétion/substitution.
+		\\
+		Nous prendrons le poids suivant: \textbf{0} pour un \textit{match}, \textbf{1} pour insertion/délétion/substitution -> \textit{Levenshtein}.
+	\end{block}
+	\begin{exampleblock}{Exemple 1}
+		Prenons deux chaînes de caractères de même longueur: CHIEN / NICHE.
+		\\
+		\begin{tabular}{llllll}
+		    & C & H & I & E & N \\
+		N & \textbf{1} & 2 & 3 & 4 & 4 \\
+		I & \textbf{2} & 2 & 2 & 3 & 4 \\
+		C & \textbf{2} & 3 & 3 & 3 & 4 \\
+		H & 3& \textbf{2} & \textbf{3} & 4 & 4 \\
+		E & 4 & 3 & 3 & \textbf{3} & \textbf{4} \\
+		\end{tabular}
+	\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
+		\pause
+		\textbf{\textit{Une distance d'édition est un nombre de modifications minimal à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
+		\\
+		3 opérations: insertion/délétion/substitution.
+		\\
+		Nous prendrons le poids suivant: \textbf{0} pour un \textit{match}, \textbf{1} pour insertion/délétion/substitution -> \textit{Levenshtein}.
+	\end{block}
+	\begin{exampleblock}{Exemple 1}
+		Prenons deux chaînes de caractères de même longueur: CHIEN / NICHE.
+		\\
+		Le résultat du calcul est: \textbf{--CH-E-}:
+		\begin{itemize}
+		\item{\textbf{deux insertions}: N, I,}
+		\item{\textbf{deux délétions}: I, N.}
+		\end{itemize}
+		Soit une distance d'édition de \textbf{4}.
+	\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+	\vfill
+		Implantation du calcul dans le programme C++.
+		\\
+		Environ 5000 distances retournées pour 100 clones, reprises dans l'\textit{interface}
+	\pause
+	\vfill
+	\begin{block}{Mais, que calcule-t-on?}
+		\pause
+		Le calcul des distances d'édition se fait par comparaison sur deux \textbf{séquences de 40 nucléotides} comprises entre la fin de la région V, et le début de la région J = les \textbf{\textit{windows}}
+	\end{block}
+	\pause
+	\vfill
+	\begin{alertblock}{Pourquoi les \textit{windows?}}
+		\pause
+		Window = marqueur spécifique d'un lymphocyte.
+		\\
+		Avantage par rapport au suivi au cours du temps, en calcul de distances,...
+	\end{alertblock}
+	\end{frame}
+	
+	\section{La distribution "Graphe"}
+	
+	\subsection{Le graphe de distances d'édition}
+	\begin{frame}
+		\begin{block}{Qu'est-ce qu'un graphe?}
+			\pause
+			En informatique, un graphe est une structure de données représentée par deux éléments de base:
+			\begin{itemize}
+			\item{les noeuds,}
+			\item{les arêtes.}
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Idée de la visualisation}
+				\begin{itemize}
+					\item{Noeuds: clones,}
+					\item{Arêtes: distances.}
+				\end{itemize}
+			\begin{itemize}
+			\item{Visualisation des distances en fonction d'une distance d'édition maximale, dans le \textit{scatterPlot}.}
+			\\
+			\item{Permission de faire varier la distance d'édition maximale, de façon interactive (avec l'utilisation d'un \textit{slider}).}
+			\\
+			\item{Implémentation en HTML5, Javascript et les frameworks D3JS et JQuery.}
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\vfill
+		Deux idées:
+		\begin{itemize}
+			\item{visualisation en un seul graphe,}
+			\item{visualisation en plusieurs graphes indépendants.}
+		\end{itemize}
+	\end{frame}
+	
+	\subsubsection{Un seul graphe}
+	
+	\begin{frame}
+	
+	Représentation d'un graphe complet
+	
+	\pause
+	
+	\vfill
+	
+	\begin{alertblock}{Problème}
+		Faiblesse du moteur physique
+	\end{alertblock}
+	\pause
+	\begin{exampleblock}{Solution}
+		Réduction du nombre d'arêtes utiles
+	\end{exampleblock}
+	
+	\pause
+	
+	\vfill
+	
+	\begin{alertblock}{Problème}
+		Représentation non-respectueuse des distances d'édition
+	\end{alertblock}
+	
+	\pause
+	
+	\vfill
+	
+	\begin{block}{Recherche et solution}
+		Semi-échec.
+		\\
+		Recherches par rapport à la meilleure visualisation possible avec les outils disponibles: visualisation de graphes indépendants.
+	\end{block}
+	
+	\end{frame}
+	
+	\subsubsection{Les graphes indépendants}
+	
+	\begin{frame}
+	
+	\textbf{Avec plusieurs graphes (indépendants)}
+	
+	Solution retenue.
+	
+	\begin{block}{Avantages}
+		\begin{itemize}
+			\item{Rapidité du calcul, et de la représentation}
+			\item{Visualisation d'un graphe intéressant en particulier}
+			\item{Respect (dans la grande majorité) des données recueillies par le moteur physique}
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Inconvénients}
+		\begin{itemize}
+			\item{Représentation de tous les clones V(D)J entre eux impossible, car prise en compte de 50\% de similarité maximum.}
+		\end{itemize}
+	\end{block}
+	
+	\end{frame}
+	
+	\begin{frame}
+		\vfill
+		\begin{center}
+		\includegraphics[scale=0.25]{img/edit_distance_ex.jpg}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}
+	
+		\begin{center}
+	
+		\includegraphics[scale=0.15]{img/EditDistance_D9.jpg}
+		\\
+		\textbf{Distance d'édition de 9.}
+		
+		\pause
+		
+		\vfill
+		
+		\includegraphics[scale=0.15]{img/EditDistance_D5.jpg}
+		\\
+		\textbf{Distance d'édition de 5.}
+		
+		\end{center}
+	
+	\end{frame}
+	
+	\begin{frame}
+	
+		\begin{center}
+		
+		\includegraphics[scale=0.15]{img/EditDistance_D5.jpg}
+		\\
+		\textbf{Distance d'édition de 5.}
+	
+		\pause
+	
+		\vfill
+	
+		\includegraphics[scale=0.15]{img/EditDistance_D1.jpg}
+		\\
+		\textbf{Distance d'édition de 1.}
+		
+		\end{center}
+	
+	\end{frame}
+	
+	\subsection{Le graphe DBSCAN}
+	
+	\begin{frame}
+	
+		\vfill
+	
+		Visualisation basée sur l'\textbf{algorithme de clusterisation DBSCAN}
+		
+		\pause
+		
+		\vfill
+		
+		\begin{block}{DBSCAN}
+			DBSCAN = Density-Based Spatial Clustering of Applications with Noise
+			\\ 
+			Algorithme publié en 1996 par \textbf{Martin Ester}, \textbf{Hans-Peter Kriegel}, \textbf{Jörg Sander} et \textbf{Xiaowei Xu}.
+			\\
+			Utilise la densité estimée des clusters (la distance d'édition - $\epsilon$ - ainsi que le nombre de voisin minimum - \textit{MinPts} - d'un clone) pour partitionner.
+		\end{block}
+		
+	\end{frame}
+	
+	\begin{frame}
+	
+	\begin{exampleblock}{Exemple}
+	
+	\begin{center}
+	
+		\includegraphics[scale=0.5]{img/DBSCAN_Wiki_ex.png}
+		\\
+		Exemple DBSCAN à \textit{MinPts} = 0 - \textbf{en.wikipedia.org}
+	
+	\end{center}
+	
+	\end{exampleblock}
+	
+	\end{frame}
+	
+	\begin{frame}
+		\vfill
+		\begin{block}{Idée de la visualisation}
+		\begin{itemize}
+			\item{Permission de faire varier $\epsilon$ ainsi que \textit{MinPts} de façon interactive pour partitionner.}
+			\item{Instanciation d'un objet DBSCAN à chaque modification d'un/des paramètre(s).}
+			\item{Cluster = sphère contenant le voisinage, autour du noeud \textit{CORE}.}
+			\item{Ajout d'une couleur aléatoire pour chaque cluster, pour mieux les différencier sur cette visualisation et les précédentes.}
+			\item{HTML5, Javascript, et les frameworks D3JS et JQuery - création d'une classe objet spécifique pour faire de l'algorithme un objet + tests unitaires QUnit.}
+		\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+	
+		\vfill
+		\begin{center}
+		\includegraphics[scale=0.3]{img/DBSCAN_ex_D2_M0.jpg}
+		\end{center}
+	
+	\end{frame}
+	
+	\begin{frame}
+	
+		\vfill
+		\begin{center}
+		\includegraphics[scale=0.3]{img/dbscan_tag.jpg}
+		\\
+		Distribution en fonction des gènes, sans colorisation
+		\end{center}
+	
+	\end{frame}
+	
+	\begin{frame}
+	
+		\vfill
+		\begin{center}
+		\includegraphics[scale=0.3]{img/dbscan_color.jpg}
+		\\
+		Même distribution, avec colorisation DBSCAN ($\epsilon$ = 2)
+		\end{center}
+	
+	\end{frame}
+	
+	\section{Conclusion et remerciements}
+	
+	\subsection{Conclusion}
+	\begin{frame}
+	\vfill
+	\begin{block}{Résolution de la problématique}
+		\pause
+		\begin{itemize}
+		\item{Problématique résolue via le graphe de distances d'édition et DBSCAN}
+		\item{Perspectives: 
+			\begin{itemize}
+				\item{implémentation d'un arbre phylogénétique, remplacement au graphe de distribution (\textbf{PJI ?})}
+			\item{implémentation des distances d'édition entre clones sur la sortie PDF.}
+			\end{itemize}
+		}
+	\end{itemize}
+	\end{block}
+	\vfill
+	\pause
+	\begin{block}{Bilan personnel}
+		\pause
+		\begin{itemize}
+		\item{Intérêt confirmé pour le monde de la recherche}
+		\item{Apports dans l'organisation et le travail en groupe}
+		\item{Apports quant à l'ingénierie logicielle ainsi que l'IHM (Intéraction Homme-Machine)} 
+		\end{itemize}
+	\end{block}
+	\end{frame}
+	
+	\subsection{Remerciements}
+	\begin{frame}
+	\vfill
+	\begin{center}
+		\textbf{Merci pour votre attention!}
+	\end{center}
+	\vfill
+	\begin{center}
+		\textbf{Avez-vous des questions?}
+	\end{center}
+	\end{frame}
+
+\end{document}
