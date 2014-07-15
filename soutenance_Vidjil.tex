@@ -20,6 +20,8 @@
   \end{frame} 
 }
 
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
 \begin{document}
 
 	\begin{frame}
@@ -35,11 +37,11 @@
 	\tableofcontents
 	\end{frame}
 	
-	\section{Introduction}
+	\section{Introduction et objectifs}
 	
 	\subsection{Le LIFL et l'équipe Bonsai}
 	\begin{frame}
-	Le \textbf{LIFL} (\textbf{Laboratoire d'Informatique Fondamentale de Lille}) est un laboratoire Français, présent sur le campus de l'Université Lille1, rattaché à l'Institut des Sciences de l'Information et de leurs Interactions (INS2I) du CNRS (Centre National de la Recherche Scientifique).
+	Le \textbf{LIFL} (\textbf{Laboratoire d'Informatique Fondamentale de Lille}) est un laboratoire Français rattaché à l'Institut des Sciences de l'Information et de leurs Interactions (INS2I) du CNRS (Centre National de la Recherche Scientifique) - basé sur le campus de Lille1.
 	\\ Dirigé par \textbf{Sophie Tison}, il comprend actuellement 10 équipes-projets et équipes du centre de recherche INRIA Lille - Nord Europe.
 	\pause
 	\vfill
@@ -47,13 +49,13 @@
 	\\
 	Elle comprend actuellement 20 membres (chercheurs, enseignants chercheurs, thésards, ...), et est actuellement dirigée par \textbf{Hélène Touzet}.
 	\\
-	Travail avec \textbf{Mathieu Giraud}, \textbf{Mikaël Salson} et \textbf{Marc Duez} sur l'ADN.
+	Travail avec \textbf{Mathieu Giraud}, \textbf{Mikaël Salson} et \textbf{Marc Duez} sur l'ADN / LAL.
 	\end{frame}
 	
 	\subsection{Contexte biologique}
 	\begin{frame}
+	\vfill
 	\begin{block}{Généralités sur l'ADN}
-		\pause
 		\textbf{ADN}: molécule modélisée en double-hélice, support universel de l'information génétique.
 		\\
 		Constituée d'un alphabet de 4 lettres: \textbf{A},\textbf{T},\textbf{G},\textbf{C}.
@@ -61,40 +63,86 @@
 		Peut être sujette à des \textbf{recombinaisons}, par différents phénomènes biologiques.
 	\end{block}
 	\pause
+	\vfill
 	\begin{block}{Les Leucocytes: gardiens de notre corps}
-		\pause
 		\textbf{Leucocyte = globule blanc.}
 		\\
-		Les \textbf{lymphocytes} font partie d'une classe de leucocytes, présents dans le sang.
+		Les \textbf{lymphocytes} font partie d'une classe de leucocytes.
 		\\
-		Un lymphocyte reconnaît un agent étranger \textbf{spécifique} en fonction de son \textbf{site actif} (\textbf{recombinaison V(D)J}).
+		Lors de la reconnaissance (spécifique): activation -> multiplication.
 		\\
-		Lors de la reconnaissance: activation -> multiplication.
+		Lymphocytes strictement identiques = \textbf{clones V(D)J}.
 	\end{block}
 	\end{frame}
 	
 	\begin{frame}
-		\vfill
-		Chaque lymphocyte porte une portion d'ADN V(D)J permettant son identification.
-		\vfill
-		\begin{block}{Recombinaison V(D)J}
-		\begin{enumerate}
-			\item{Délétion de portions du gène V et J}
-			\item{Ajout de nucléotides aléatoires entre V/D et D/J}
-		\end{enumerate}
+		\begin{center}
+			\includegraphics[scale=0.4]{img/anticorps-zoom.png}
+		\end{center}
+		
+		\begin{center}
+			\includegraphics[scale=0.2]{img/antigene.png}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}
+		\onslide<1>{
+		\begin{block}{La recombinaison V(D)J}
+			\begin{center}
+			\includegraphics[scale=0.27]{img/vdj-1.jpg}
+			\end{center}
 		\end{block}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\onslide<1>{
+		\begin{block}{La recombinaison V(D)J}
+			\begin{center}
+			\includegraphics[scale=0.27]{img/vdj-2.jpg}
+			\end{center}
+		\end{block}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\onslide<1>{
+		\begin{block}{La recombinaison V(D)J}
+			\begin{center}
+			\includegraphics[scale=0.27]{img/vdj-3.jpg}
+			\end{center}
+		\end{block}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\onslide<1>{
+		\begin{block}{La recombinaison V(D)J}
+			\begin{center}
+			\includegraphics[scale=0.27]{img/vdj-4.jpg}
+			\end{center}
+		\end{block}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{center}
+		\vfill
+		Chaque lymphocyte porte une portion d'ADN V(D)J permettant son identification!
+		\vfill
+		 $2.10^{12}$ recombinaisons possibles.
+		 \end{center}
 	\end{frame}
 	
 	\begin{frame}
 	\begin{block}{La Leucémie Aigüe Lymphoblastique (LAL)}
-		\pause
 		Cancer liquide affectant majoritairement les enfants.
 		\\
-		Provoque une \textbf{surproduction de lymphocytes cancéreux}. Les lymphocytes strictement identiques, regroupés en population, sont appelés \textbf{clones V(D)J}.
+		\textbf{Surproduction de lymphocytes cancéreux}
 	\end{block}
 	\pause
+	\vfill
 	\begin{alertblock}{Problème}
-		\pause
 		L'accumulation de lymphocytes cancéreux provoque:
 		\begin{itemize}
 			\item{une anémie chez le patient,}
@@ -107,38 +155,41 @@
 	
 	\subsection{Le projet Vidjil}
 	\begin{frame}
-		\textit{Vidjil}: collaboration entre l'équipe Bonsai et le Centre d'Hématologie de l'Université Lille2. Projet maintenu par \textbf{Claude Preudhomme}, \textbf{Mathieu Giraud} et \textbf{Mikaël Salson}. Ingénieur sur le projet: \textbf{Marc Duez}.
-		\pause
 		\vfill
-		\begin{block}{A quoi sert le projet ?}
-		\pause
+		\textit{Vidjil}: collaboration entre l'équipe Bonsai et le Centre d'Hématologie de l'Université Lille2. Projet maintenu par \textbf{Claude Preudhomme}, \textbf{Mathieu Giraud} et \textbf{Mikaël Salson}. Ingénieur sur le projet: \textbf{Marc Duez}.
+		\vfill
+		\begin{block}{Composition du projet}
 		\textit{Vidjil} est composé de deux programmes:
-		\pause
 		\begin{itemize}
 			\item{un programme en C++ (\textit{algorithme}),}
-			\pause
 			\item{une interface Web (\textit{interface}): HTML5, Javascript, Ajax, \textit{frameworks} D3JS et JQuery, Python (web2py)}
 		\end{itemize}
+		\end{block}
 		\pause
-		\textit{Vidjil} sert aux médecins et chercheurs afin de pouvoir détecter, textbf{dénombrer et suivre les clones V(D)J} en fonction du temps, mais permet aussi de \textbf{préciser les traitements thérapeutiques}.
+		\begin{block}{À quoi sert-il?}
+			\begin{itemize}
+			\item{\textbf{Détection, dénombrement et suivi des clones V(D)J}.}
+			\\
+			\item{\textbf{Précision des traitements thérapeutiques}.}
+			\end{itemize}
 		\end{block}
 	\end{frame}
 	
 	\begin{frame}
 	\begin{center}
-	\includegraphics[scale=0.25]{img/m_W+B.jpg}
+	\includegraphics[scale=0.25]{img/all.jpg}
 	\\
-	\textit{Interface} avec palettes Dark/Light
+	Présentation de l'\textit{Interface}
 	\end{center}
 	\end{frame}
 	
 	\begin{frame}
 	\begin{center}
-	\includegraphics[scale=0.25]{img/m_genes.jpg}
+	\includegraphics[scale=0.3]{img/m_genes.jpg}
 	\\
 	Visualisation selon la distribution \textbf{V/J Genes}
 	\vfill
-	\includegraphics[scale=0.25]{img/m_alleles.jpg}
+	\includegraphics[scale=0.3]{img/m_alleles.jpg}
 	\\
 	Visualisation selon la distribution \textbf{V/J Alleles}
 	\end{center}
@@ -149,43 +200,45 @@
 		Sur une distribution déjà implanté, comment savoir, dans un groupe de clones, lesquels sont les plus similaires les uns des autres?
 	\end{alertblock}
 	\pause
-	\begin{block}{Solution 1}
-		La solution est de comparer les clones un par un, nucléotide par nucléotide... Ce qui est fastidieux, et pouvant être un source d'erreur!
-	\end{block}
-	\end{frame}
-	
-	\begin{frame}
-	\begin{alertblock}{Problème}
-		Sur une distribution déjà implanté, comment savoir, dans un groupe de clones, lesquels sont les plus similaires les uns des autres?
-	\end{alertblock}
+	\only<2>{
+		\begin{block}{Solution 1}
+			La solution est de comparer les clones un par un, nucléotide par nucléotide... Ce qui est fastidieux, et pouvant être un source d'erreur!
+			\includegraphics[scale=0.35]{img/aligneur.jpg}
+		\end{block}
+	}
+	\pause
 	\begin{block}{Solution 1}
 		\sout{Comparer les clones un par un avec l'\textit{interface}, nucléotide par nucléotide... Ce qui est fastidieux, et peut être une source d'erreur!}
+			\includegraphics[scale=0.35]{img/aligneur.jpg}
 	\end{block}
+	
 	\begin{block}{Solution 2}
 		Créer un outil permettant de visualiser directement les clones en fonction de leurs similarités.
 	\end{block}
 	\end{frame}
 	
-	\section{Sujet et objectifs}
 	\begin{frame}
-	\begin{alertblock}{Problématique}
-		La problématique concernant mon sujet de stage est de visualiser de façon interactive les clones V(D)J selon leurs distances d'édition.
-	\end{alertblock}
-	\pause
+	
+		\vfill
+		\begin{center}
+		\includegraphics[scale=0.4]{img/intro_dbscan.jpg}
+		\end{center}
+	
+	\end{frame}
+	
+	\subsection{Objectifs}
+	\begin{frame}
 	\vfill
 	\begin{block}{Objectifs}
 		Deux objectifs:
-		\pause
 		\begin{itemize}
 		\item{création d'un graphe représentant les distances d'édition entre les clones,}
-		\pause
 		\item{implantation de l'algorithme de partitionnement DBSCAN.}
 		\end{itemize}
 	\end{block}
 	\pause
 	\vfill
 	\begin{block}{Mais avant...}
-	\pause
 	...il faut d'abord commencer à calculer les distances d'édition!
 	\end{block}
 	\end{frame}
@@ -194,7 +247,6 @@
 	
 	\begin{frame}
 	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
-		\pause
 		\textbf{\textit{Une distance d'édition est un nombre de modifications à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
 		\\
 		3 opérations: insertion/délétion/substitution.
@@ -207,18 +259,17 @@
 		\\
 		\begin{tabular}{llllll}
 		    & C & H & I & E & N \\
-		N & - & - & - & - & - \\
-		I & - & - & - & - & - \\
-		C & - & - & - & - & - \\
-		H & - & - & - & - & - \\
-		E & - & - & - & - & - \\
+		N & \only<2>{-} \only<1>{1} & \only<2>{-} \only<1>{2} &  \only<2>{-} \only<1>{3} &  \only<2>{-} \only<1>{4} &  \only<2>{-} \only<1>{4} \\
+		I & \only<2>{-} \only<1>{2} & \only<2>{-} \only<1>{2} & \only<2>{-} \only<1>{2} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{4} \\
+		C & \only<2>{-} \only<1>{2} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{4}\\
+		H & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{2} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{4} & \only<2>{-} \only<1>{4}\\
+		E & \only<2>{-} \only<1>{4} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{3} & \only<2>{-} \only<1>{4}\\
 		\end{tabular}
 	\end{exampleblock}
 	\end{frame}
 	
 	\begin{frame}
 	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
-		\pause
 		\textbf{\textit{Une distance d'édition est un nombre de modifications à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
 		\\
 		3 opérations: insertion/délétion/substitution.
@@ -241,7 +292,6 @@
 	
 	\begin{frame}
 	\begin{block}{Qu'est-ce qu'une distance d'édition ?}
-		\pause
 		\textbf{\textit{Une distance d'édition est un nombre de modifications minimal à apporter selon trois opérations, permettant de passer d'une chaîne de caractères à une autre.}}
 		\\
 		3 opérations: insertion/délétion/substitution.
@@ -251,7 +301,7 @@
 	\begin{exampleblock}{Exemple 1}
 		Prenons deux chaînes de caractères de même longueur: CHIEN / NICHE.
 		\\
-		Le résultat du calcul est: \textbf{--CH-E-}:
+		Le résultat du calcul est: \textbf{- - C H - E -}:
 		\begin{itemize}
 		\item{\textbf{deux insertions}: N, I,}
 		\item{\textbf{deux délétions}: I, N.}
@@ -265,16 +315,13 @@
 		Implantation du calcul dans le programme C++.
 		\\
 		Environ 5000 distances retournées pour 100 clones, reprises dans l'\textit{interface}
-	\pause
 	\vfill
-	\begin{block}{Mais, que calcule-t-on?}
-		\pause
-		Le calcul des distances d'édition se fait par comparaison sur deux \textbf{séquences de 40 nucléotides} comprises entre la fin de la région V, et le début de la région J = les \textbf{\textit{windows}}
+	\begin{block}{Mais, sur quoi calcule-t-on?}
+		Comparaison sur deux \textbf{séquences de 40 nucléotides} comprises entre la fin de la région V, et le début de la région J = les \textbf{\textit{windows}}
 	\end{block}
 	\pause
 	\vfill
 	\begin{alertblock}{Pourquoi les \textit{windows?}}
-		\pause
 		Window = marqueur spécifique d'un lymphocyte.
 		\\
 		Avantage par rapport au suivi au cours du temps, en calcul de distances,...
@@ -286,7 +333,6 @@
 	\subsection{Le graphe de distances d'édition}
 	\begin{frame}
 		\begin{block}{Qu'est-ce qu'un graphe?}
-			\pause
 			En informatique, un graphe est une structure de données représentée par deux éléments de base:
 			\begin{itemize}
 			\item{les noeuds,}
@@ -318,7 +364,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\subsubsection{Un seul graphe}
+	\subsubsection*{Un seul graphe}
 	
 	\begin{frame}
 	
@@ -331,9 +377,8 @@
 	\begin{alertblock}{Problème}
 		Faiblesse du moteur physique
 	\end{alertblock}
-	\pause
 	\begin{exampleblock}{Solution}
-		Réduction du nombre d'arêtes utiles
+		Réduction du nombre d'arêtes inutiles
 	\end{exampleblock}
 	
 	\pause
@@ -343,8 +388,6 @@
 	\begin{alertblock}{Problème}
 		Représentation non-respectueuse des distances d'édition
 	\end{alertblock}
-	
-	\pause
 	
 	\vfill
 	
@@ -356,7 +399,7 @@
 	
 	\end{frame}
 	
-	\subsubsection{Les graphes indépendants}
+	\subsubsection*{Les graphes indépendants}
 	
 	\begin{frame}
 	
@@ -383,48 +426,31 @@
 	\begin{frame}
 		\vfill
 		\begin{center}
-		\includegraphics[scale=0.25]{img/edit_distance_ex.jpg}
+			\includegraphics[scale=0.25]{img/edit_distance_ex.jpg}
 		\end{center}
 	\end{frame}
 	
 	\begin{frame}
-	
-		\begin{center}
-	
-		\includegraphics[scale=0.15]{img/EditDistance_D9.jpg}
-		\\
-		\textbf{Distance d'édition de 9.}
-		
-		\pause
-		
 		\vfill
-		
-		\includegraphics[scale=0.15]{img/EditDistance_D5.jpg}
-		\\
-		\textbf{Distance d'édition de 5.}
-		
-		\end{center}
-	
-	\end{frame}
-	
-	\begin{frame}
-	
-		\begin{center}
-		
-		\includegraphics[scale=0.15]{img/EditDistance_D5.jpg}
-		\\
-		\textbf{Distance d'édition de 5.}
-	
-		\pause
-	
-		\vfill
-	
-		\includegraphics[scale=0.15]{img/EditDistance_D1.jpg}
-		\\
-		\textbf{Distance d'édition de 1.}
-		
-		\end{center}
-	
+			\begin{overlayarea}{10cm}{7cm}
+				\begin{center}
+   				\only<1>{
+					\includegraphics[scale=0.4]{img/dbscan_ex9.jpg}
+					\\
+					\textbf{Distance d'édition de 9.}
+				}
+				\only<2>{
+					\includegraphics[scale=0.4]{img/dbscan_ex5.jpg}
+					\\
+					\textbf{Distance d'édition de 5.}
+				}
+				\only<3>{
+					\includegraphics[scale=0.4]{img/dbscan_ex0.jpg}
+					\\
+					\textbf{Distance d'édition de 1.}
+				}
+				\end{center}
+  			\end{overlayarea}
 	\end{frame}
 	
 	\subsection{Le graphe DBSCAN}
@@ -434,8 +460,6 @@
 		\vfill
 	
 		Visualisation basée sur l'\textbf{algorithme de clusterisation DBSCAN}
-		
-		\pause
 		
 		\vfill
 		
@@ -511,11 +535,10 @@
 	
 	\section{Conclusion et remerciements}
 	
-	\subsection{Conclusion}
+	\subsection*{Conclusion}
 	\begin{frame}
 	\vfill
 	\begin{block}{Résolution de la problématique}
-		\pause
 		\begin{itemize}
 		\item{Problématique résolue via le graphe de distances d'édition et DBSCAN}
 		\item{Perspectives: 
@@ -529,7 +552,6 @@
 	\vfill
 	\pause
 	\begin{block}{Bilan personnel}
-		\pause
 		\begin{itemize}
 		\item{Intérêt confirmé pour le monde de la recherche}
 		\item{Apports dans l'organisation et le travail en groupe}
@@ -538,7 +560,7 @@
 	\end{block}
 	\end{frame}
 	
-	\subsection{Remerciements}
+	\subsection*{Remerciements}
 	\begin{frame}
 	\vfill
 	\begin{center}

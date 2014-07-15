@@ -1,0 +1,57 @@
+\documentclass{beamer}
+\usepackage{vdj}
+\newcommand{\partiegene}[4][6pt]{%
+  \draw[#3] (#4,-1) rectangle ++(#1, 2) node[midway,above=1,#3text] {#2};}
+
+\begin{document}
+
+\begin{frame}
+  \only<+>{}
+\scalebox{2}{\begin{tikzpicture}[vdjgene]
+      \draw[very thick] (0,0) -- (14em, 0);
+        \partiegene[5em]{$V$}{vgene}{1em}
+
+        \visible<+->{
+        \fill[white,opacity=0.6] (6em,-1) rectangle
+        ++(-0.6em, 2);}
+        \only<.->{\fill[pattern=north east lines,pattern color=red]
+        (6em,-1) rectangle  ++(-0.6em, 2);}
+
+        \partiegene[2em]{$D$}{dgene}{6em}
+
+        \visible<.->{
+          \fill[white,opacity=0.5] (6em,-1) rectangle ++(0.3em, 2);
+        }
+        \only<.->{\fill[pattern=north west lines,pattern color=red]
+        (6em,-1) rectangle  ++(0.3em, 2);}
+
+        \visible<.->{
+          \fill[white,opacity=0.5] (8em,-1) rectangle ++(-0.2em, 2);
+        }
+        \only<.->{\fill[pattern=north east lines,pattern color=red]
+        (8em,-1) rectangle  ++(-0.2em, 2);}
+
+        \partiegene[3em]{$J$}{jgene}{8em}
+
+        \visible<.->{
+          \fill[white,opacity=0.5] (8em,-1) rectangle ++(0.5em, 2);
+        }
+        \only<.->{\fill[pattern=north west lines,pattern color=red]
+        (8em,-1) rectangle  ++(0.5em, 2);}
+
+        \begin{scope}[vdjgene,yshift=10,opacity=1]
+          \visible<+->{
+            \partiegene[1.2em]{$N$}{ngene}{5.4em}
+            \draw[thick,->] (6em,-1) -- ++(0,-1.5);
+            
+            \partiegene[0.8em]{$N$}{ngene}{7.6em}
+            \draw[thick,->] (8em,-1) -- ++(0,-1.5);
+          }
+        \end{scope}
+
+        \visible<+->{\draw[opacity=1, zoneDiversite] (4.4em, -1) rectangle
+        (9.5em, 1) node[below=1em, pos=0.5,font=\small\bfseries] (zd)
+        {Diversity region};}
+      \end{tikzpicture}}
+\end{frame}
+\end{document}
